@@ -13,31 +13,34 @@
 <body>
     <?php
     date_default_timezone_set('America/Guayaquil'); ?>
-    <div class="container" id="fecha">
-        <span class="fa fa-clock-o" aria-hidden="true"><small><?= date(' d/m/Y  g:i a ') ?></small></span>
-        <!-- <audio controls="" preload="none" src="http://ec.radiosenlaweb.com/1270am-radiojunin"></audio> -->
+    <div class="container">
+        <div class="container-fecha">
+            <span class="glyphicon glyphicon-time" aria-hidden="true"><small><?= date(' d/m/Y  g:i a ') ?></small></span>
+        </div>
+         <!-- <audio controls="" preload="none" src="http://ec.radiosenlaweb.com/1270am-radiojunin"></audio>  -->
+        <div class="nav-social">
+            <a href="" target="_blank" class="fa fa-facebook" tittle="Facebook"></a>
+            <a href="" target="_blank" class="fa fa-twitter" tittle="Twitter"></a>
+            <a href="" target="_blank" class="fa fa-instagram" tittle="Instagram"></a>
+            <a href="" target="_blank" class="fa fa-youtube" tittle="Youtube"></a>
+        </div>
     </div>
-    <div class="social-bar">
-        <a href="" class="icon icon-facebook" target="_blank"></a>
-        <a href="" class="icon icon-twitter" target="_blank"></a>
-        <a href="" class="icon icon-instagram" target="_blank"></a>
-        <a href="" class="icon icon-youtube" target="_blank"></a>
-    </div>
+
     <div class="container-fluid">
         <header>
             <a href="#" id="logo">logo</a>
             <div class="menu-toggle"></div>
             <nav>
                 <ul>
-                    <li class="nav-item"><a href="#" class="active"><i class="fa fa-home"></i> INICIO</a></li>
-                    <li class="nav-item"><a href="#"><i class="fa fa-bank"></i> MUNICIPIO <i class="fa  fa-sort-down"></i></a>
+                    <li class="nav-item"><a href="#" class="active">INICIO</a></li>
+                    <li class="nav-item"><a href="#">MUNICIPIO <i class="fa  fa-sort-down"></i></a>
                         <ul id="submenu">
                             <li><a href="">MISIÓN Y VISIÓN</a></li>
                             <li><a href="">ORDENANZAS</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a href="#"><i class="fa fa-balance-scale"></i> TRANSPARENCIA</a></li>
-                    <li class="nav-item"><a href="#"><i class="fa fa-paper-plane-o"></i> CONTACTO</a></li>
+                    <li class="nav-item"><a href="#">TRANSPARENCIA</a></li>
+                    <li class="nav-item"><a href="#">CONTACTO</a></li>
             </nav>
             <div class="clearfix"></div>
         </header>
@@ -112,6 +115,12 @@
             <div class="container-footer">
                 <div class="copyright">
                     @ 2019 Copyright GAD Municipal del Cantón Junín
+                </div>
+                <div class="social">
+                    <a href="" target="_blank" class="fa fa-facebook" tittle="Facebook"></a>
+                    <a href="" target="_blank" class="fa fa-twitter" tittle="Twitter"></a>
+                    <a href="" target="_blank" class="fa fa-instagram" tittle="Instagram"></a>
+                    <a href="" target="_blank" class="fa fa-youtube" tittle="Youtube"></a>
                 </div>
                 <div class="informacion">
                     <a href="">INFORMACION</a> |
