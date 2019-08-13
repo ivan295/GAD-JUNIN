@@ -4,14 +4,15 @@
 {{ trans('adminlte_lang::message.home') }}
 @endsection
 @section('main-content')
-<form method="post"  action="{{route('noticia.create')}}" target="request">
+<form method="post"  action="{{route('noticia.create')}}" target="request" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<div class="row">
 		<div class="col-md-12 col-md-offset-0">
 			<div class="box box-primary">
 				<div class="box-header with-border">
-					<h3 class="box-title">Producto</h3>
+					<h3 class="box-title">Noticias</h3>
 				</div>
+				
 				<input type="hidden" class="form-control" name="id_usuario" id="id_usuario" value="{{Auth::user()->id}}">
 				<div class="col-md-12">
 					<label for="titulo">Título</label>

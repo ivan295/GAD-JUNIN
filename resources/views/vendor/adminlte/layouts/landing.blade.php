@@ -66,7 +66,14 @@
 
 
     <section id="home" name="home">
-        <div id="headerwrap">
+    <div class="carousel-item">
+    <img src="" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+        </div>
+        </div>
+        <!-- <div id="headerwrap">
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-12">
@@ -91,8 +98,8 @@
                         <p>... {{ trans('adminlte_lang::message.by') }} <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a> {{ trans('adminlte_lang::message.at') }} <a href="http://acacha.org">acacha.org</a> {{ trans('adminlte_lang::message.readytouse') }}</p>
                     </div>
                 </div>
-            </div> <!--/ .container -->
-        </div><!--/ #headerwrap -->
+            </div> / .container 
+        </div>-->
     </section>
 
     <section id="desc" name="desc">
