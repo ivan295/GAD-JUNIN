@@ -17,23 +17,23 @@
         <div class="container-fecha">
             <span class="glyphicon glyphicon-time" aria-hidden="true"><small><?= date(' d/m/Y  g:i a ') ?></small></span>
         </div>
-         <!-- <audio controls="" preload="none" src="http://ec.radiosenlaweb.com/1270am-radiojunin"></audio>  -->
+        <!-- <audio controls="" preload="none" src="http://ec.radiosenlaweb.com/1270am-radiojunin"></audio>  -->
         <div class="nav-social">
-            <a href="" target="_blank" class="fa fa-facebook" tittle="Facebook"></a>
-            <a href="" target="_blank" class="fa fa-twitter" tittle="Twitter"></a>
-            <a href="" target="_blank" class="fa fa-instagram" tittle="Instagram"></a>
-            <a href="" target="_blank" class="fa fa-youtube" tittle="Youtube"></a>
+            <a href="" target="_blank" class="fa fa-facebook" title="Facebook"></a>
+            <a href="" target="_blank" class="fa fa-twitter" title="Twitter"></a>
+            <a href="" target="_blank" class="fa fa-instagram" title="Instagram"></a>
+            <a href="" target="_blank" class="fa fa-youtube" title="Youtube"></a>
         </div>
     </div>
 
     <div class="container-fluid">
         <header>
-            <a href="#" id="logo">logo</a>
+            <a href="#" id="logo"><img alt="logo" src="img/logo.png" class="imagen"></a>
             <div class="menu-toggle"></div>
             <nav>
                 <ul>
                     <li class="nav-item"><a href="#" class="active">INICIO</a></li>
-                    <li class="nav-item"><a href="#">MUNICIPIO <i class="fa  fa-sort-down"></i></a>
+                    <li class="nav-item"><a href="#">MUNICIPIO<i> &#9660;</i></a>
                         <ul id="submenu">
                             <li><a href="">MISIÓN Y VISIÓN</a></li>
                             <li><a href="">ORDENANZAS</a></li>
@@ -46,44 +46,68 @@
         </header>
     </div>
     <br>
-    <section>
-        <div class="container-fluid">
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                    <?php $cnt = 0; ?>
-                    <?php $noticia = DB::table('noticias')->get(); ?>
-                    @foreach ($noticia as $not)
-                    <div class="carousel-item <?php if ($cnt == 0) {
-                                                    echo 'active';
-                                                } ?>">
-
-                        <div><img class="d-block w-50 active img-responsive" src="imgNoticias/{{ $not->imagen}}" alt="Imagen de Noticia">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>
-                                {{$not->titulo}}
-                            </h5>
-                            <p>
-                                {{$not->resumen}}
-                            </p>
+    <?php $noticia = DB::table('noticias')->where('resumen','=',1)->first(); ?>
+    <div class="hero-area d-flex flex-wrap">
+        <div class="hero-single-section">
+            <div class="single-welcome-post bg-img item1 wow fadeInUp" data-wow-delay="300ms" style="background-image: url(imgNoticias/{{$noticia->imagen}})">
+                    <div class="single-blog-post white">
+                        <div class="blog-content">
+                            <a href="#" class="post-title">{{$noticia->titulo}}</a>
+                            <a href="#" class="post-tag">{{$noticia->resumen}}</a>
                         </div>
                     </div>
-                    <?php $cnt++; ?>
-                    @endforeach
-
-                </div>
-
-                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carousel" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
-    </section>
+        <?php $noticia2 = DB::table('noticias')->where('resumen','=',2)->first(); ?>
+
+        <div class="hero-single-section">
+            <!-- Single Welcome Post -->
+            <div class="single-welcome-post bg-img item2 wow fadeInUp" data-wow-delay="400ms" style="background-image: url(imgNoticias/{{$noticia2->imagen}});">
+                <!-- Content -->
+                <div class="welcome-post-content">
+                    <!-- Single Blog Post -->
+                    <div class="single-blog-post white">
+                        <div class="blog-content">
+                            <a href="#" class="post-title">{{$noticia2->titulo}}</a>
+                            <a href="#" class="post-tag">{{$noticia2->resumen}}</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php $noticia3 = DB::table('noticias')->where('resumen','=',3)->first(); ?>
+            <div class="hero-second-section d-flex flex-wrap">
+                <!-- Single Welcome Post -->
+                <div class="single-welcome-post bg-img item3 wow fadeInUp" data-wow-delay="500ms" style="background-image: url(imgNoticias/{{$noticia3->imagen}});">
+                    <!-- Content -->
+                    <div class="welcome-post-content">
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post style3 white">
+                            <div class="blog-content">
+                                <a href="#" class="post-title">{{$noticia3->titulo}}</a>
+                                <a href="#" class="post-tag">{{$noticia3->resumen}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php $noticia4 = DB::table('noticias')->where('resumen','=',4)->first(); ?>
+                <!-- Single Welcome Post -->
+                <div class="single-welcome-post bg-img item4 wow fadeInUp" data-wow-delay="600ms" style="background-image: url(imgNoticias/{{$noticia4->imagen}});">
+                    <!-- Content -->
+                    <div class="welcome-post-content">
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post style4 white">
+                            <div class="blog-content">
+                                <a href="#" class="post-title">{{$noticia4->titulo}}</a>
+                                <a href="#" class="post-tag">{{$noticia4->resumen}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <br>
     <!--footer-->
     <footer>
@@ -114,25 +138,23 @@
             </div>
             <div class="container-footer">
                 <div class="copyright">
-                    @ 2019 Copyright GAD Municipal del Cantón Junín
+                    &copy; 2019 Copyright GAD Municipal del Cantón Junín
                 </div>
                 <div class="social">
-                    <a href="" target="_blank" class="fa fa-facebook" tittle="Facebook"></a>
-                    <a href="" target="_blank" class="fa fa-twitter" tittle="Twitter"></a>
-                    <a href="" target="_blank" class="fa fa-instagram" tittle="Instagram"></a>
-                    <a href="" target="_blank" class="fa fa-youtube" tittle="Youtube"></a>
+                    <a href="" target="_blank" class="fa fa-facebook" title="Facebook"></a>
+                    <a href="" target="_blank" class="fa fa-twitter" title="Twitter"></a>
+                    <a href="" target="_blank" class="fa fa-instagram" title="Instagram"></a>
+                    <a href="" target="_blank" class="fa fa-youtube" title="Youtube"></a>
                 </div>
                 <div class="informacion">
                     <a href="">INFORMACION</a> |
                     <a href="">INFORMACION</a> |
-                    <a href="">INFORMACION</a>
+                    <a href="">INFORMACION</a> |
                     <a class="social" href="{{ url('/login') }}" target="_blank"><i class="fa fa-user-circle"></i></a></li>
                 </div>
             </div>
         </div>
     </footer>
-
-
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -158,7 +180,5 @@
         })
     </script>
 </body>
-
-
 
 </html>
