@@ -13,52 +13,50 @@
 <body>
     <?php
     date_default_timezone_set('America/Guayaquil'); ?>
-    <div class="container">
+    <!-- <div class="container">
         <div class="container-fecha">
             <span class="glyphicon glyphicon-time" aria-hidden="true"><small><?= date(' d/m/Y  g:i a ') ?></small></span>
         </div>
-        <!-- <audio controls="" preload="none" src="http://ec.radiosenlaweb.com/1270am-radiojunin"></audio>  -->
+        <!-- <audio controls="" preload="none" src="http://ec.radiosenlaweb.com/1270am-radiojunin"></audio> 
         <div class="nav-social">
             <a href="" target="_blank" class="fa fa-facebook" title="Facebook"></a>
             <a href="" target="_blank" class="fa fa-twitter" title="Twitter"></a>
             <a href="" target="_blank" class="fa fa-instagram" title="Instagram"></a>
             <a href="" target="_blank" class="fa fa-youtube" title="Youtube"></a>
         </div>
-    </div>
+    </div> -->
 
-    <div class="container-fluid">
-        <header>
-            <a href="#" id="logo"><img alt="logo" src="img/logo.png" class="imagen"></a>
-            <div class="menu-toggle"></div>
-            <nav>
-                <ul>
-                    <li class="nav-item"><a href="#" class="active">INICIO</a></li>
-                    <li class="nav-item"><a href="#">MUNICIPIO<i> &#9660;</i></a>
-                        <ul id="submenu">
-                            <li><a href="">MISIÓN Y VISIÓN</a></li>
-                            <li><a href="">ORDENANZAS</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="#">TRANSPARENCIA</a></li>
-                    <li class="nav-item"><a href="#">CONTACTO</a></li>
-            </nav>
-            <div class="clearfix"></div>
-        </header>
-    </div>
+    <header>
+        <a href="" id="logo"><img alt="logo" src="img/logo.png" class="imagen"></a>
+        <div class="menu-toggle"></div>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="" class="active">INICIO</a></li>
+                <li class="nav-item"><a href="">MUNICIPIO<i> &#9660;</i></a>
+                    <ul id="submenu">
+                        <li><a href="">MISIÓN Y VISIÓN</a></li>
+                        <li><a href="">ORDENANZAS</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="">TRANSPARENCIA</a></li>
+                <li class="nav-item"><a href="">CONTACTO</a></li>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
     <br>
-    <?php $noticia = DB::table('noticias')->where('resumen','=',1)->first(); ?>
+    <?php $noticia = DB::table('noticias')->where('resumen', '=', '1')->first(); ?>
     <div class="hero-area d-flex flex-wrap">
         <div class="hero-single-section">
             <div class="single-welcome-post bg-img item1 wow fadeInUp" data-wow-delay="300ms" style="background-image: url(imgNoticias/{{$noticia->imagen}})">
-                    <div class="single-blog-post white">
-                        <div class="blog-content">
-                            <a href="#" class="post-title">{{$noticia->titulo}}</a>
-                            <a href="#" class="post-tag">{{$noticia->resumen}}</a>
-                        </div>
+                <div class="single-blog-post white">
+                    <div class="blog-content">
+                        <a href="#" class="post-title">{{$noticia->titulo}}</a>
+                        <a href="#" class="post-tag">{{$noticia->resumen}}</a>
                     </div>
+                </div>
             </div>
         </div>
-        <?php $noticia2 = DB::table('noticias')->where('resumen','=',2)->first(); ?>
+        <?php $noticia2 = DB::table('noticias')->where('resumen', '=', 2)->first(); ?>
 
         <div class="hero-single-section">
             <!-- Single Welcome Post -->
@@ -75,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <?php $noticia3 = DB::table('noticias')->where('resumen','=',3)->first(); ?>
+            <?php $noticia3 = DB::table('noticias')->where('resumen', '=', 3)->first(); ?>
             <div class="hero-second-section d-flex flex-wrap">
                 <!-- Single Welcome Post -->
                 <div class="single-welcome-post bg-img item3 wow fadeInUp" data-wow-delay="500ms" style="background-image: url(imgNoticias/{{$noticia3->imagen}});">
@@ -90,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                <?php $noticia4 = DB::table('noticias')->where('resumen','=',4)->first(); ?>
+                <?php $noticia4 = DB::table('noticias')->where('resumen', '=', 4)->first(); ?>
                 <!-- Single Welcome Post -->
                 <div class="single-welcome-post bg-img item4 wow fadeInUp" data-wow-delay="600ms" style="background-image: url(imgNoticias/{{$noticia4->imagen}});">
                     <!-- Content -->
@@ -109,6 +107,17 @@
         </div>
     </div>
     <br>
+    <div class="container">
+        <section>
+            <aside id="block">
+                <p>jagsdhasdgahdgashd</p>
+            </aside>
+            <aside id="gaceta">
+                <p>sdfgsdfgdfgdgf</p>
+            </aside>
+        </section>
+    </div>
+    <br>
     <!--footer-->
     <footer>
         <div class="container-footer-all">
@@ -117,8 +126,7 @@
                     <img src="img\item.jpg" alt="logo">
                 </div>
                 <div class="frase">
-                    <p>"LA INNOVACIÓN ES LA QUE DISTINGUE
-                        A UN LÍDER, DE LOS DEMÁS"</p>
+                    <p>"JUNÍN LO HACEMOS TODOS"</p>
                 </div>
                 <div class="contacto">
                     <h1>CONTACTOS</h1>
@@ -147,7 +155,7 @@
                     <a href="" target="_blank" class="fa fa-youtube" title="Youtube"></a>
                 </div>
                 <div class="informacion">
-                    <a href="">INFORMACION</a> |
+                    <a href="">INTRANET</a> |
                     <a href="">INFORMACION</a> |
                     <a href="">INFORMACION</a> |
                     <a class="social" href="{{ url('/login') }}" target="_blank"><i class="fa fa-user-circle"></i></a></li>
