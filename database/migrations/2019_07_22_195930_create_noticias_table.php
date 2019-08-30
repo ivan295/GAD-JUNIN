@@ -20,6 +20,8 @@ class CreateNoticiasTable extends Migration
             $table->text('resumen');
             $table->text('descripcion');
             $table->string('imagen',100);
+            $table->string('estado',30);
+            $table->integer('lugar');
 
             $table->bigInteger('id_usuario')->unsigned();
            $table->foreign('id_usuario')->references('id')->on('users');

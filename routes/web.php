@@ -19,7 +19,9 @@ Route::get('/index', function () {
 Route::get('/noticia/nuevanoticia', function () {
     return view('/vendor/adminlte/noticia');
 });
-//noticia
+Route::get('/home','HomeController@index');
+
+//crear noticia
 Route::get('/noticia', 'NoticiaController@index');
 
 Route::post('noticia/mostrar', ['as' => 'noticia.index', 'uses'=>'NoticiaController@index']);
@@ -30,6 +32,20 @@ Route::post('noticia/{id}/edit', ['as' => 'noticia.editar', 'uses' => 'NoticiaCo
 
 Route::put('noticia/{id}', ['as' => 'noticia.update', 'uses'=>'NoticiaController@update']);
 Route::post('noticia/crear', ['as' => 'noticia.create', 'uses'=>'NoticiaController@store']);
+
+//publicar noticia
+Route::get('/publicar', 'PublicarController@index');
+
+Route::post('publicar/mostrar', ['as' => 'publicar.index', 'uses'=>'PublicarController@index']);
+
+Route::delete('publicar/{id}/eliminar', ['as'=> 'publicar.delete', 'uses' =>'PublicarController@destroy']);
+
+Route::post('publicar/{id}/edit', ['as' => 'publicar.editar', 'uses' => 'PublicarController@edit']);
+
+Route::post('publicar/{id}/public', ['as' => 'publicar.public', 'uses' => 'PublicarController@public']);
+
+Route::put('publicar/{id}', ['as' => 'publicar.update', 'uses'=>'PublicarController@update']);
+Route::post('publicar/crear', ['as' => 'publicar.create', 'uses'=>'PublicarController@store']);
 
 
 

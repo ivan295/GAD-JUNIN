@@ -22,6 +22,8 @@ class NoticiaController extends Controller
         $Noticia->imagen = $request->imagen;
         $Noticia->id_usuario = $request->id_usuario;
         $Noticia->descripcion = $request->text1;
+        $Noticia->estado = 'Espera';
+        $Noticia->lugar = $request->lugar;
 
         $img=$request->file('imagen');//trae la imagen
         $file_ruta= time().'_'.$img->getClientOriginalName();//usa el tiempo y el nombre de la imagen para definir nuevo nombre

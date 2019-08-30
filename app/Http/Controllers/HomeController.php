@@ -33,6 +33,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('adminlte::home');
+        $Noticia = \DB::table('noticias')->join('users','users.id','=','noticias.id_usuario')
+        ->where('noticias.estado','=', 'Publicado')
+        ->select('noticias.*','users.nombre as usuario')
+        ->orderBy('id', 'desc')
+        ->get();
+         //dd($NuevaH);
+        return view('adminlte::home', compact('Noticia'));
     }
 }
