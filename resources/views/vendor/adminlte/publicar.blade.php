@@ -14,7 +14,7 @@
 				<div class="box-body">
 					<table class="table table-hover table-bordered" id="tablaproductos">
 						<thead>
-							<tr bgcolor="#30CF54">
+							<tr bgcolor="#00B189">
 								<th class='text-center'>Usuario</th>
 								<th class='text-center'>Número de Casilla</th>
 								<th class="text-center">Titulo</th>

@@ -1,5 +1,4 @@
 @extends('adminlte::layouts.app')
-
 @section('htmlheader_title')
 {{ trans('adminlte_lang::message.home') }}
 @endsection
@@ -14,9 +13,9 @@
 				<div class="box-body">
 					<table class="table table-hover table-bordered" id="tablaproductos">
 						<thead>
-							<tr bgcolor="#30CF54">
+							<tr bgcolor="#00B189">
 								<th class='text-center'>Fecha de Publicación</th>
-								<th class='text-center'>Numero de Casilla</th>
+								<th class='text-center'>Número de Casilla</th>
 								<th class='text-center'>Título</th>
 								<th class="text-center">Usuario</th>
 								<th class="text-center">Opción</th>
@@ -32,7 +31,7 @@
 								<td>{{$Not->usuario}}</td>
 								<td class="text-center">
 									<div class="row">
-										<div class="col-md-6 text-left">
+										<div class="col-md-2 col-md-offset-3">
 											<form action="" method="post">
 												<input type="hidden" name="_method" value="DELETE">
 												<input type="hidden" name="_token" value="{{ csrf_token() }}">

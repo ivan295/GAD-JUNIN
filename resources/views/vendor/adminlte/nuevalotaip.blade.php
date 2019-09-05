@@ -1,0 +1,56 @@
+@extends('adminlte::layouts.app')
+
+@section('htmlheader_title')
+{{ trans('adminlte_lang::message.home') }}
+@endsection
+@section('main-content')
+<script type="text/javascript">
+    function consultar() {
+        var dato = document.getElementById('consulta_mes').value;
+        document.getElementById('mes').value = dato;
+    }
+</script>
+<form method="post" action="{{route('lotaip.create')}}" target="request" enctype="multipart/form-data">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-0">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Crear Lotaip</h3>
+                </div>
+                <div class="col-md-12">
+                    <label>Mes</label>
+                    <div class="select-group">
+                        <select class="form-control selectpicker" name="mes" id="consulta_mes" onchange="consultar()">
+                            <option value="0">Seleccionar Mes</option>
+                            <?php $mes = DB::table('lotaipmes')->join('lotaipanio','lotaipanio.id','=','lotaipmes.id_anio')->select('lotaipmes.*','lotaipanio.descripcion as an')->get(); ?>
+                            @foreach($mes as $m)
+                            <option value="<?php echo $m->id; ?>"><?php echo $m->descripcion; ?> <?php echo $m->an; ?></option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden" id="mes" name="mes">
+                <input type="hidden" class="form-control" name="id_usuario" id="id_usuario" value="{{Auth::user()->id}}">
+                <div class="col-md-12">
+                    <label for="titulo">Título</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                        <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Título" required>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="titulo">Url</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                        <input type="text" class="form-control" name="url" id="url" placeholder="Url" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-save"></span> Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@endsection

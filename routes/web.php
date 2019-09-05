@@ -1,16 +1,13 @@
 <?php
+ Route::get('/', function () {
+    return view('/vendor/adminlte/index');
+ });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//  Route::get('/', function () {
+//      return view('/vendor/adminlte/construccion');
+//  });
 
 Route::group(['middleware' => 'auth'], function () {
-    //    Route::get('/link1', function ()    {
-//        // Uses Auth Middleware
-//    });
-
-    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
-    #adminlte_routes
 });
 Route::get('/index', function () {
     return view('/vendor/adminlte/index');
@@ -19,7 +16,39 @@ Route::get('/index', function () {
 Route::get('/noticia/nuevanoticia', function () {
     return view('/vendor/adminlte/noticia');
 });
+Route::get('/lotaip/nuevalotaip', function () {
+    return view('/vendor/adminlte/nuevalotaip');
+});
+Route::get('/lotaipanio/nuevalotaipanio', function () {
+    return view('/vendor/adminlte/nuevalotaipanio');
+});
+Route::get('/lotaipmes/nuevalotaipmes', function () {
+    return view('/vendor/adminlte/nuevalotaimes');
+});
+
+
+
+
+
+//rutas index
+Route::get('/lotaip', 'LotaipController@index');
 Route::get('/home','HomeController@index');
+Route::get('/publicar', 'PublicarController@index');
+Route::get('/lotaipanio', 'LotaipAnioController@index');
+Route::get('/lotaipmes', 'LotaipMesController@index');
+Route::get('/transparecia', 'TransparenciaController@index');
+
+
+Route::post('transparecia/mostrar', ['as' => 'transparecia.index', 'uses'=>'TranspareciaController@index']);
+
+Route::delete('transparecia/{id}/eliminar', ['as'=> 'transparecia.delete', 'uses' =>'TranspareciaController@destroy']);
+
+Route::post('transparecia/{id}/edit', ['as' => 'transparecia.editar', 'uses' => 'TranspareciaController@edit']);
+
+Route::put('transparecia/{id}', ['as' => 'transparecia.update', 'uses'=>'TransparenciaController@update']);
+
+Route::post('transparecia/crear', ['as' => 'transparecia.create', 'uses'=>'TransparenciaController@store']);
+
 
 //crear noticia
 Route::get('/noticia', 'NoticiaController@index');
@@ -34,7 +63,7 @@ Route::put('noticia/{id}', ['as' => 'noticia.update', 'uses'=>'NoticiaController
 Route::post('noticia/crear', ['as' => 'noticia.create', 'uses'=>'NoticiaController@store']);
 
 //publicar noticia
-Route::get('/publicar', 'PublicarController@index');
+
 
 Route::post('publicar/mostrar', ['as' => 'publicar.index', 'uses'=>'PublicarController@index']);
 
@@ -45,19 +74,43 @@ Route::post('publicar/{id}/edit', ['as' => 'publicar.editar', 'uses' => 'Publica
 Route::post('publicar/{id}/public', ['as' => 'publicar.public', 'uses' => 'PublicarController@public']);
 
 Route::put('publicar/{id}', ['as' => 'publicar.update', 'uses'=>'PublicarController@update']);
+
 Route::post('publicar/crear', ['as' => 'publicar.create', 'uses'=>'PublicarController@store']);
-
-
-
-Route::get('/index', 'IndexController@index');
 
 Route::post('index/mostrar', ['as' => 'index.index', 'uses'=>'IndexController@index']);
 
-//Route::delete('index/{id}/eliminar', ['as'=> 'index.delete', 'uses' =>'IndexController@destroy']);
 
-//Route::post('index/{id}/edit', ['as' => 'index.editar', 'uses' => 'IndexController@edit']);
+//lotaip
+Route::post('lotaip/mostrar', ['as' => 'lotaip.index', 'uses'=>'LotaipController@index']);
 
-//Route::put('index/{id}', ['as' => 'index.update', 'uses'=>'IndexController@update']);
+Route::delete('lotaip/{id}/eliminar', ['as'=> 'lotaip.delete', 'uses' =>'LotaipController@destroy']);
 
-//Route::post('index/crear', ['as' => 'index.create', 'uses'=>'IndexController@store']);
+Route::post('lotaip/{id}/edit', ['as' => 'lotaip.editar', 'uses' => 'LotaipController@edit']);
+
+Route::put('lotaip/{id}', ['as' => 'lotaip.update', 'uses'=>'LotaipController@update']);
+
+Route::post('lotaip/crear', ['as' => 'lotaip.create', 'uses'=>'LotaipController@store']);
+
+//lotaipAnio
+Route::post('lotaipanio/mostrar', ['as' => 'lotaipanio.index', 'uses'=>'LotaipAnioController@index']);
+
+Route::delete('lotaipanio/{id}/eliminar', ['as'=> 'lotaipanio.delete', 'uses' =>'LotaipAnioController@destroy']);
+
+Route::post('lotaipanio/{id}/edit', ['as' => 'lotaipanio.editar', 'uses' => 'LotaipAnioController@edit']);
+
+Route::put('lotaipanio/{id}', ['as' => 'lotaipanio.update', 'uses'=>'LotaipAnioController@update']);
+
+Route::post('lotaipanio/crear', ['as' => 'lotaipanio.create', 'uses'=>'LotaipAnioController@store']);
+
+
+//lotaipMes
+Route::post('lotaipmes/mostrar', ['as' => 'lotaipmes.index', 'uses'=>'LotaipMesController@index']);
+
+Route::delete('lotaipmes/{id}/eliminar', ['as'=> 'lotaipmes.delete', 'uses' =>'LotaipMesController@destroy']);
+
+Route::post('lotaipmes/{id}/edit', ['as' => 'lotaipmes.editar', 'uses' => 'LotaipMesController@edit']);
+
+Route::put('lotaipmes/{id}', ['as' => 'lotaipmes.update', 'uses'=>'LotaipMesController@update']);
+
+Route::post('lotaipmes/crear', ['as' => 'lotaipmes.create', 'uses'=>'LotaipMesController@store']);
 

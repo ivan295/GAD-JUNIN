@@ -33,6 +33,15 @@
                     <li><a href="{{ url('/noticia') }}">Crear Noticias</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Gestión Lotaip</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/lotaipanio') }}">Crear año</a></li>
+                    <li><a href="{{ url('/lotaipmes') }}">Crear Mes</a></li>
+                    <li><a href="{{ url('/lotaip') }}">Nuevo Lotaip</a></li>
+
+                </ul>
+            </li>
             <!-- <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
