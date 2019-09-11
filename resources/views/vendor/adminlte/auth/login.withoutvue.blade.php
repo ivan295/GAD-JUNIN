@@ -40,25 +40,19 @@
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">
-                        <div class="col-xs-8">
-                            <div class="checkbox icheck">
-                                <label>
-                                    <input style="display:none;" type="checkbox" name="remember"> {{ trans('adminlte_lang::message.remember') }}
-                                </label>
-                            </div>
-                        </div><!-- /.col -->
-                        <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte_lang::message.buttonsign') }}</button>
+                       
+                        <div class="col-xs-5">
+                            <button type="submit" class="btn btn-success btn-block btn-flat">{{ trans('adminlte_lang::message.buttonsign') }}</button>
                         </div><!-- /.col -->
                     </div>
                 </form>
 
                 @include('adminlte::auth.partials.social_login')
-
+<!--
                 <a href="{{ url('/password/reset') }}">{{ trans('adminlte_lang::message.forgotpassword') }}</a><br>
                 <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a>
-
-            </div><!-- /.login-box-body -->
+ /.login-box-body -->
+            </div>
 
         </div><!-- /.login-box -->
     </div>

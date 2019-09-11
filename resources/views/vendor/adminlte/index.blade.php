@@ -3,21 +3,26 @@
 
 <head>
     <title>GAD JUNÍN-Gobierno Autónomo Descentralizado Municipal del cantón Junín</title>
-    <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/estiloPrincipal.css" type="text/css" rel="stylesheet">
+    <link href="{{ asset('/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/estiloPrincipal.css') }}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/font.css" type="text/css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-acale=1.0, minimun-scale=1.0"> 
+    <link href="{{ asset('/css/font.css') }}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-acale=1.0, minimun-scale=1.0">      
+    <link rel="icon" href="img/ico.ico">
 </head>
-
 <body>
         <header>
-            <a href="#" id="logo"><img alt="logo" src="img/logo.png" width="170" height="40"></a>
+            <a href="index" id="logo"><img alt="logo" src="img/logo.png" width="200" height="95"></a>
             <div class="menu-toggle"></div>
             <nav>
                 <ul>
-                    <li class="nav-item"><a href="" class="active">INICIO</a></li>
-                    <li class="nav-item"><a>MUNICIPIO<i> &#9660;</i></a>
+                    <li class="nav-item"><a href="index" class="active">INICIO</a></li>
+                    <li class="nav-item" id="i-municipio"><a>SERVICIOS<i> &#9660;</i></a>
+                        <ul id="submenu">
+                            <li><a href="">CONSULTA DE PREDIOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" id="i-municipio"><a>MUNICIPIO<i> &#9660;</i></a>
                         <ul id="submenu">
                             <li><a href="">MISIÓN Y VISIÓN</a></li>
                             <li><a href="">ORDENANZAS</a></li>
@@ -38,7 +43,7 @@
                 $div1 = '<div class="blog-content">';
                 $findiv1 = '</div>';
             } else {
-                $img = 'logo.jpg';
+                $img = 'sec1-.jpg';
                 $titulo1 = "";
                 $resumen1 = "";
                 $div1 = '';
@@ -66,7 +71,7 @@
                     $div2 = '<div class="blog-content">';
                     $findiv2 = '</div>';
                 } else {
-                    $img2 = 'logo.jpg';
+                    $img2 = 'sec2-.jpg';
                     $titulo2 = "";
                     $resumen2 = "";
                     $div2 = '';
@@ -96,7 +101,7 @@
                         $div3 = '<div class="blog-content">';
                         $findiv3 = '</div>';
                     } else {
-                        $img3 = 'logo.jpg';
+                        $img3 = 'sec3-.jpg';
                         $titulo3 = "";
                         $resumen3 = "";
                         $div3 = '';
@@ -124,7 +129,7 @@
                             $div4 = '<div class="blog-content">';
                             $findiv4 = '</div>';
                         } else {
-                            $img4 = 'logo.jpg';
+                            $img4 = 'sec4-.jpg';
                             $titulo4 = "";
                             $resumen4 = "";
                             $div4 = '';
@@ -149,7 +154,7 @@
         <br>
         <div id="seccion2">
             <div id="block">
-                <iframe id="video" src="https://www.youtube.com/embed/K3wLBUByj-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video" src="https://www.youtube.com/embed/aYD5LMKT4Us" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div id="servi-online">
                 <img id="servicio"src="img\servicios.jpg" alt="Servicios online" >
@@ -201,11 +206,11 @@
             </div>
         </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/toggle.js"></script>
-    <script type="text/javascript" src="js/bootstrap-hover.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="{{ url ('/js/jquery.min.js') }}"></script>
+    <script src="{{ url ('/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url ('/js/toggle.js') }}"></script>
+    <script src="{{ url ('/js/bootstrap-hover.min.js') }}"></script>
+    <script src="{{ url ('/js/jquery.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $(".dropdown").on("hide.bs.dropdown", function() {
