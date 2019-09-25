@@ -25,6 +25,12 @@ Route::get('/lotaipanio/nuevalotaipanio', function () {
 Route::get('/lotaipmes/nuevalotaipmes', function () {
     return view('/vendor/adminlte/nuevalotaimes');
 });
+Route::get('/misionyvision/misionyvision', function () {
+    return view('/vendor/adminlte/misionyvision');
+});
+Route::get('/contacto/contacto', function () {
+    return view('/vendor/adminlte/contacto');
+});
 
 
 
@@ -37,6 +43,9 @@ Route::get('/publicar', 'PublicarController@index');
 Route::get('/lotaipanio', 'LotaipAnioController@index');
 Route::get('/lotaipmes', 'LotaipMesController@index');
 Route::get('/transparecia', 'TransparenciaController@index');
+Route::get('/misionyvision', 'MyVController@index');
+Route::get('/contacto', 'ContactoController@index');
+
 
 
 Route::post('transparecia/mostrar', ['as' => 'transparecia.index', 'uses'=>'TranspareciaController@index']);

@@ -8,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/font.css" type="text/css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-acale=1.0, minimun-scale=1.0">
+    <link rel="icon" href="img/ico.ico">
 
 </head>
 
@@ -24,187 +25,233 @@
                         <li><a href="">ORDENANZAS</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{ url('/transparecia') }}">TRANSPARENCIA</a></li>
+                <li class="nav-item"><a href="#">TRANSPARENCIA</a></li>
                 <li class="nav-item"><a href="">CONTACTO</a></li>
             </ul>
         </nav>
         <div class="clearfix"></div>
     </header>
     <br>
-    <div class="container-trans">
-        <h1>Ley Orgánica de Transparencia y Acceso a la Información Pública.</h1>
-        <p><strong>Art. 7.-</strong>Difusión de la Información Pública.- Por la transparencia en la gestión administrativa que están obligadas a observar todas las instituciones del Estado que conforman el sector público en los términos del artículo 225 de la Constitución de la República y demás entes señalados en el artículo 1 de la presente Ley, difundirán a través de un portal de información o página web, así como de los medios necesarios a disposición del público, implementados en la misma institución, la siguiente información mínima actualizada, que para efectos de esta Ley, se la considera de naturaleza obligatoria:</p>
+    <section id=trans>
+        <div id="transparencia">
+            <div class="container-trans">
+                <h1>Transparencia GAD Junín</h1>
+                <div id="imagen-trans">
+                    <img id="imgtrans" src="img\img-transparencia.jpg" alt="">
+                </div>
+                <br>
+                <p id="texto"><strong>Art. 7.-</strong>Difusión de la Información Pública.- Por la transparencia en la gestión administrativa que están obligadas a observar todas las instituciones del Estado que conforman el sector público en los términos del artículo 225 de la Constitución de la República y demás entes señalados en el artículo 1 de la presente Ley, difundirán a través de un
+                    portal de información o página web, así como de
+                    los medios necesarios a disposición del público,
+                    implementados en la misma institución,
+                    la siguiente información mínima actualizada, que para efectos de esta Ley, se la considera de naturaleza obligatoria:</p>
+
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event,'2019')" id="defaultOpen">2019</button>
+                </div>
+                <!--2019-->
+                <div id="2019" class="tabcontent">
+                    <a class="mes" id="enero">
+                        <p id="letra">&#x2b;Enero</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Enero')  //mes 1 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-enero">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
 
 
 
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event,'2019')" id="defaultOpen">2019</button>
-            <button class="tablinks" onclick="openCity(event,'2018')" id="defaultOpen">2018</button>
-            <button class="tablinks" onclick="openCity(event,'2017')" id="defaultOpen">2017</button>
+                    <a class="mes" id="febrero">
+                        <p>&#x2b;Febrero</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Febrero')  //mes 1 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-febrero">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+
+
+
+
+                    <a class="mes" id="marzo">
+                        <p>&#x2b;Marzo</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Marzo')  //mes 3 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-marzo">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+
+
+
+
+                    <a class="mes" id="abril">
+                        <p>&#x2b;Abril</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Abril')  //mes 1 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-abril">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+
+
+
+
+                    <a class="mes" id="mayo">
+                        <p>&#x2b;Mayo</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Mayo')  //mes 1 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-mayo">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+
+
+
+
+                    <a class="mes" id="junio">
+                        <p>&#x2b;Junio</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Junio')  //mes 1 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-junio">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+
+
+
+                    <a class="mes" id="julio">
+                        <p>&#x2b;Julio</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Julio')  //mes 1 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-julio">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+
+
+
+                    <a class="mes" id="agosto">
+                        <p>&#x2b;Agosto</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Agosto')  //mes 1 del año 2019
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-agosto">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+
+
+
+                    <a class="mes" id="septiembre">
+                        <p>&#x2b;Septiembre</p>
+                    </a>
+                    <?php
+                    $var = DB::table('lotaip')
+                        ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
+                        ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
+                        ->select('lotaip.*', 'lotaipmes.descripcion as m')
+                        ->where('lotaipmes.descripcion', '=', 'Septiembre')  
+                        ->where('lotaipanio.descripcion', '=', '2019')
+                        ->get();
+                    ?>
+                    <ul class="item" id="item-septiembre">
+                        @foreach($var as $l)
+                        <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
-        <!--2019-->
-        <div id="2019" class="tabcontent">
-            <a class="mes" id="enero">
-                <p><i>&#9660; </i>Enero</p>
-            </a>
-            <!--mes de enero-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Enero')  //mes 1 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-enero">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-            <!--mes de febrero-->
-            <a class="mes" id="febrero">
-                <p><i>&#9660; </i>Febrero</p>
-            </a>
-            <!--mes de febrero-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Febrero')  //mes 1 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-febrero">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-            <!--mes de marzo-->
-            <a class="mes" id="marzo">
-                <p><i>&#9660; </i>Marzo</p>
-            </a>
-            <!--mes de marzo-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Marzo')  //mes 3 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-marzo">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-
-            <!--mes de febrero-->
-            <a class="mes" id="abril">
-                <p><i>&#9660; </i>Abril</p>
-            </a>
-            <!--mes de febrero-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Abril')  //mes 1 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-abril">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-
-            <!--mes de febrero-->
-            <a class="mes" id="mayo">
-                <p><i>&#9660; </i>Mayo</p>
-            </a>
-            <!--mes de febrero-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Mayp')  //mes 1 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-mayo">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-
-            <!--mes de febrero-->
-            <a class="mes" id="junio">
-                <p><i>&#9660; </i>Junio</p>
-            </a>
-            <!--mes de febrero-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Junio')  //mes 1 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-junio">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-
-
-            <!--mes de febrero-->
-            <a class="mes" id="julio">
-                <p><i>&#9660; </i>Julio</p>
-            </a>
-            <!--mes de febrero-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Julio')  //mes 1 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-julio">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-            <!--mes de febrero-->
-            <a class="mes" id="agosto">
-                <p><i>&#9660; </i>Agosto</p>
-            </a>
-            <!--mes de febrero-->
-            <?php
-            $var = DB::table('lotaip')
-                ->join('lotaipmes', 'lotaipmes.id', '=', 'lotaip.id_mes')
-                ->join('lotaipanio', 'lotaipanio.id', '=', 'lotaipmes.id_anio')
-                ->select('lotaip.*', 'lotaipmes.descripcion as m')
-                ->where('lotaipmes.descripcion', '=', 'Agosto')  //mes 1 del año 2019
-                ->where('lotaipanio.descripcion', '=', '2019')
-                ->get();
-            ?>
-            <ul class="item" id="item-agosto">
-                @foreach($var as $l)
-                <li><a href="{{$l->url}}" target="_blank">{{$l->titulo}}</a></li>
-                @endforeach
-            </ul>
-
-
+        <div id="correo">
+            <div id="buzon">
+                <strong><p id="titulo-trans">Solicitud Receptada por medio digital</p></strong>
+                <p id="articulo">
+                    El GAD de Junín pone a disposición de los mandantes, una 
+                    cuenta de correo institucional para atender solicitudes
+                    de información pública de manera digital, de acuerdo al artículo
+                    5 de la Resolución Nº 046-DPE-CGAJ-2019 de la Defensoría del Pueblo.
+                </p>
+                <strong><p id="correo-trans"> transparencia@junin.gob.ec</p></strong>
+            </div>
 
         </div>
-    </div>
+
+    </section>
     <br>
     <!--footer-->
     <footer>
@@ -221,7 +268,7 @@
                     </div>
                     <div class="telefono">
                         <img src="img\phone.jpg" alt="phone">
-                        <label>(593)5 268 99 18</label>
+                        <label>(593)5 370 21 80</label>
                     </div>
                     <div class="mail">
                         <img src="img\email.png" alt="email">
@@ -240,7 +287,7 @@
                     <a href="" target="_blank" class="fa fa-youtube" title="Youtube"></a>
                 </div>
                 <div class="informacion">
-                    <a href="">INTRANET</a> |
+                    <a href="https://mail.junin.gob.ec">CORREO</a> |
                     <a href="">INFORMACION</a> |
                     <a href="">INFORMACION</a> |
                     <a class="social" href="{{ url('/login') }}" target="_blank"><i class="fa fa-user-circle"></i></a></li>
@@ -255,6 +302,7 @@
     <script type="text/javascript" src="js/bootstrap-hover.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/item_mes.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $(".dropdown").on("hide.bs.dropdown", function() {
@@ -292,7 +340,7 @@
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
     </script>
-    
+
 </body>
 
 </html>
